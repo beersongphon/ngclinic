@@ -1,0 +1,478 @@
+@import '../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-lists/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-calendars/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-angular-calendars/styles/material.css';
+
+$font-color: #ffffff;
+$font-dark-color: #949ba2;
+$font-darker-color: #5b646d;
+$highlight-color: #ffa500;
+$main-color: #2e323b;
+
+$light-color: lighten($main-color, 3%);
+$dark-color: darken($main-color, 3%);
+$lighter-color: lighten($main-color, 6%);
+$darker-color: darken($main-color, 6%);
+
+$gradient-color-start: $light-color;
+$gradient-color-end: $dark-color;
+
+$sidebar-width: 13rem;
+$header-height: 3.25rem;
+$padding: 2rem;
+
+html {
+  overflow-y: auto;
+}
+
+body {
+  color: $font-color;
+}
+
+.sidebar {
+  padding-left: calc(#{$padding} - 0.75rem);
+  padding-right: calc(#{$padding} - 0.75rem);
+  position: absolute;
+  .category-header {
+    padding: 0.5em 0.75em;
+  }
+  .menu {
+    position: fixed;
+    width: calc(#{$sidebar-width} - 2.5rem);
+    max-width: inherit;
+  }
+  .menu-list a {
+    font-size: 0.875rem;
+    line-height: 24px;
+    color: $font-dark-color;
+  }
+}
+.sidebar:before {
+  content: "";
+  background-color: $dark-color;
+  width: $sidebar-width;
+  position: fixed;
+}
+
+.sidebar,
+.sidebar:before {
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.main {
+  margin-left: $sidebar-width;
+  position: relative;
+  padding-left: $padding;
+  padding-right: $padding;
+  header {
+    line-height: 18px;
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      padding-bottom: 0.5rem;
+    }
+    hr {
+      background-color: transparent;
+      border-top: 1px solid $lighter-color;
+    }
+    small {
+      color: $font-dark-color;
+      text-align: right;
+    }
+  }
+}
+.main:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: -2;
+  left: 0;
+  right: 0;
+  background-image: -webkit-radial-gradient(
+    top,
+    circle cover,
+    $gradient-color-start 0%,
+    $gradient-color-end 70%
+  );
+  background-image: -moz-radial-gradient(
+    center,
+    circle cover,
+    $gradient-color-start 0%,
+    $gradient-color-end 70%
+  );
+  background-image: -o-radial-gradient(
+    center,
+    circle cover,
+    $gradient-color-start 0%,
+    $gradient-color-end 70%
+  );
+  background-image: radial-gradient(
+    center,
+    circle cover,
+    $gradient-color-start 0%,
+    $gradient-color-end 70%
+  );
+  background-position: 50%, 50%;
+}
+
+.sidebar,
+.main {
+  margin-top: $header-height;
+  padding-top: $padding;
+}
+
+.navbar {
+  box-shadow: 0px 0px 21px $darker-color;
+}
+.navbar-brand {
+  width: $sidebar-width;
+  background-color: $highlight-color;
+  margin-right: calc(#{$padding} - 0.75rem);
+  .navbar-item {
+    padding-left: $padding;
+  }
+}
+
+.box {
+  hr {
+    background-color: $lighter-color;
+  }
+}
+.box.transparent {
+  background-color: transparent;
+}
+.box.accent {
+  background-color: $highlight-color;
+  .subtitle {
+    color: $font-color;
+  }
+}
+
+.statcard {
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  .statcard-number {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.125;
+  }
+  .statcard-desc {
+    font-size: 85%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $font-dark-color;
+  }
+  .delta-indicator {
+  display: inline-block;
+  padding: .4em;
+  font-size: 12px;
+  vertical-align: middle;
+  }
+  .delta-indicator:after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+  }
+
+}
+
+/* overwrite bulma, try to resolve with variables */
+
+.box {
+  background-color: $lighter-color;
+  box-shadow: none;
+  border-radius: 3px;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6,
+.title,
+.tile {
+  color: $font-color;
+}
+
+.subtitle {
+  color: $font-dark-color;
+}
+
+.navbar-item.is-tab:hover {
+  background-color: transparent;
+  border-bottom-color: $font-dark-color;
+}
+
+.navbar-item.is-tab {
+  border-bottom: 3px solid transparent;
+  min-height: 3.25rem;
+  padding-bottom: calc(0.5rem - 1px);
+}
+
+a.navbar-item:hover {
+  color: $darker-color;
+}
+
+.breadcrumb li + li::before,
+.breadcrumb li a {
+  color: $font-darker-color;
+}
+
+.breadcrumb li a:hover,
+.breadcrumb li.is-active a {
+  color: $font-color;
+}
+
+.tabs ul {
+  border-bottom-color: $font-darker-color;
+}
+
+.tabs li.is-active a {
+  border-bottom-color: $font-color;
+  color: $font-color;
+}
+
+.tabs a {
+  border-bottom-color: $font-darker-color;
+  color: $font-dark-color;
+}
+
+.tabs a:hover {
+  border-bottom-color: $font-color;
+  color: $font-color;
+}
+
+.pagination-link,
+.pagination-next,
+.pagination-previous {
+  border-color: $font-dark-color;
+  color: $font-dark-color;
+}
+
+.pagination-link.is-current,
+.pagination-link:hover,
+.pagination-next:hover,
+.pagination-previous:hover {
+  background-color: transparent;
+  border-color: $font-color;
+  color: $font-color;
+}
+
+
+
+
+// // Colors
+// $black:        hsl(0, 0%, 4%) !default;
+// $black-bis:    hsl(0, 0%, 7%) !default;
+// $black-ter:    hsl(0, 0%, 14%) !default;
+
+// $grey-darker:  hsl(0, 0%, 21%) !default;
+// $grey-dark:    hsl(0, 0%, 29%) !default;
+// $grey:         hsl(0, 0%, 48%) !default;
+// $grey-light:   hsl(0, 0%, 71%) !default;
+// $grey-lighter: hsl(0, 0%, 86%) !default;
+
+// $white-ter:    hsl(0, 0%, 96%) !default;
+// $white-bis:    hsl(0, 0%, 98%) !default;
+// $white:        hsl(0, 0%, 100%) !default;
+
+// $orange:       hsl(14,  100%, 53%) !default;
+// $yellow:       hsl(48,  100%, 67%) !default;
+// $green:        hsl(141, 71%,  48%) !default;
+// $turquoise:    hsl(171, 100%, 41%) !default;
+// $blue:         hsl(217, 71%,  53%) !default;
+// $purple:       hsl(271, 100%, 71%) !default;
+// $red:          hsl(348, 100%, 61%) !default;
+
+// // Typography
+// $family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+// $family-monospace: monospace !default;
+// $render-mode: optimizeLegibility !default;
+
+// $size-1: 3rem !default;
+// $size-2: 2.5rem !default;
+// $size-3: 2rem !default;
+// $size-4: 1.5rem !default;
+// $size-5: 1.25rem !default;
+// $size-6: 1rem !default;
+// $size-7: 0.75rem !default;
+
+// $weight-light: 300 !default;
+// $weight-normal: 400 !default;
+// $weight-semibold: 500 !default;
+// $weight-bold: 700 !default;
+
+// // Body
+// $body-background: #fff !default;
+// $body-size: 16px !default;
+
+// // Responsiveness
+// // 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+// $tablet: 769px !default;
+// // 960px container + 40px
+// $desktop: 1000px !default;
+// // 1152px container + 40
+// $widescreen: 1192px !default;
+// // 1344px container + 40
+// $fullhd: 1384px !default;
+
+// // Miscellaneous
+// $easing: ease-out !default;
+// $radius-small: 2px !default;
+// $radius: 3px !default;
+// $radius-large: 5px !default;
+// $speed: 86ms !default;
+
+// ////////////////////////////////////////////////
+// ////////////////////////////////////////////////
+// // 2. Primary colors
+
+// $primary: $turquoise !default;
+
+// $info: $blue !default;
+// $success: $green !default;
+// $warning: $yellow !default;
+// $danger: $red !default;
+
+// $light: $white-ter !default;
+// $dark: $grey-darker !default;
+
+// ////////////////////////////////////////////////
+// ////////////////////////////////////////////////
+// // 3. Applied variables
+
+// // Invert colors
+// $orange-invert: findColorInvert($orange) !default;
+// $yellow-invert: findColorInvert($yellow) !default;
+// $green-invert: findColorInvert($green) !default;
+// $turquoise-invert: findColorInvert($turquoise) !default;
+// $blue-invert: findColorInvert($blue) !default;
+// $purple-invert: findColorInvert($purple) !default;
+// $red-invert: findColorInvert($red) !default;
+
+// $primary-invert: $turquoise-invert !default;
+// $info-invert: $blue-invert !default;
+// $success-invert: $green-invert !default;
+// $warning-invert: $yellow-invert !default;
+// $danger-invert: $red-invert !default;
+// $light-invert: $dark !default;
+// $dark-invert: $light !default;
+
+// // General colors
+// $background: $white-ter !default;
+
+// $border: $grey-lighter !default;
+// $border-hover: $grey-light !default;
+
+// // Text colors
+// $text: $grey-dark !default;
+// $text-invert: findColorInvert($text) !default;
+// $text-light: $grey !default;
+// $text-strong: $grey-darker !default;
+
+// // Code colors
+// $code: $red !default;
+// $code-background: $background !default;
+
+// $pre: $text !default;
+// $pre-background: $background !default;
+
+// // Link colors
+// $link: $primary !default;
+// $link-invert: $primary-invert !default;
+// $link-visited: $purple !default;
+
+// $link-hover: $grey-darker !default;
+// $link-hover-border: $grey-light !default;
+
+// $link-focus: $grey-darker !default;
+// $link-focus-border: $primary !default;
+
+// $link-active: $grey-darker !default;
+// $link-active-border: $grey-dark !default;
+
+// // Typography
+// $family-primary: $family-sans-serif !default;
+// $family-code: $family-monospace !default;
+
+// $size-small: $size-7 !default;
+// $size-normal: $size-6 !default;
+// $size-medium: $size-5 !default;
+// $size-large: $size-4 !default;
+
+// ////////////////////////////////////////////////
+// ////////////////////////////////////////////////
+// // 4. Lists and maps
+
+// $colors: ("white": ($white, $black), "black": ($black, $white), "light": ($light, $light-invert), "dark": ($dark, $dark-invert), "primary": ($primary, $primary-invert), "info": ($info, $info-invert), "success": ($success, $success-invert), "warning": ($warning, $warning-invert), "danger": ($danger, $danger-invert)) !default;
+
+// $sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7 !default;
+
+// $navbar-height: 3.25rem;
+
+
+// .is-sidebar-menu {
+//   padding: 2rem;
+//   background: #4a4a4a;
+// }
+// .is-sidebar-menu li ul {
+//   margin: 5px 0 5px 18px;
+// }
+// .is-sidebar-menu li a {
+//   position: relative;
+//   line-height: 20px;
+//   color: white;
+// }
+// .is-sidebar-menu li a .icon {
+//   vertical-align: baseline;
+//   margin-right: 5px;
+// }
+// .is-sidebar-menu .menu-container {
+//   margin-bottom: 20px;
+// }
+// .is-sidebar-menu .menu-subcontainer {
+//   overflow: hidden;
+//   height: 0;
+// }
+// .is-sidebar-menu .open {
+//   height: 100%;
+// }
+// .is-sidebar-menu .icon.is-angle {
+//   position: absolute;
+//   margin-right: 0;
+//   right: 10px;
+//   transition: transform 0.3s ease;
+// }
+// .is-sidebar-menu .menu-toggle .icon.is-angle {
+//   transform: rotate(180deg);
+// }
+
+// .columns.is-fullheight {
+//   min-height: calc(100vh - ( 3.25rem - .75rem ) );
+//   max-height: calc(100vh - ( 3.25rem - .75rem ) );
+//   height: calc(100vh - ( 3.25rem - .75rem ) );
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: stretch;
+// }
+// .columns.is-fullheight .column {
+//   overflow-y: auto;
+// }
+
+// .is-main-content {
+//   background: #dbdbdb;
+// }

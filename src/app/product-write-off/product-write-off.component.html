@@ -1,0 +1,154 @@
+<app-header></app-header>
+<div class="wrapper">
+  <div class="">
+    <app-sidebar></app-sidebar>
+
+    <main class="main">
+
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-6">
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-while" style="color: rgba(0, 0, 0, 0.7);">
+              <p class="title">ข้อมูลการตัดจำหน่ายสินค้า</p>
+              <!-- <p class="subtitle">ข้อมูลผู้ป่วย</p> -->
+              <div class="content">
+                <!-- Content -->
+                <div class="field is-horizontal">
+                  <div class="field-label is-normal">
+                    <label class="label">รหัสการตัดจำหน่ายสินค้า</label>
+                  </div>
+                  <div class="field-body">
+                    <div class="field">
+                      <div class="control">
+                        <input class="input" type="text" placeholder="e.g. Partnership opportunity">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="container is-max-desktop">
+                  <div class="notification is-primary" style ="text-align:center;">
+                    รายการตัดจำหน่ายสินค้า
+                  </div>
+                </div>
+
+                <table class="table table is-striped table is-hoverable">
+                  <thead>
+                    <tr>
+                      <th><abbr title="Position">รหัส</abbr></th>
+                      <th>ชื่อยา</th>
+                      <th><abbr title="Played">จำนวน</abbr></th>
+                      <th>สาเหตุ</th>
+                      <th>ลบ</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- <tr>
+                      <th>1</th>
+                      <td>
+                        <a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
+                      </td>
+                      <td>38</td>
+                      <td align='right'>100.00</td>
+                      <td></td>
+                    </tr> -->
+                    <tr>
+                      <td colspan="5" align="center">--- ยังไม่มีรายการสั่งยา ---</td>
+                    </tr>
+                    <tr>
+                      <td colspan='3' bgcolor='#CEE7FF' align='center'><b>ราคารวม</b></td>
+                      <td align='right' bgcolor='#CEE7FF'><b>0.00</b></td>
+                      <td align='left' bgcolor='#CEE7FF'></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+
+                <div class="field is-horizontal">
+                  <div class="field-label">
+                    <!-- Left empty for spacing -->
+                  </div>
+                  <div class="field-body">
+                    <div class="field">
+                      <div class="control is-expanded has-icons-left has-icons-right">
+                        <div class="buttons">
+                          <button class="button is-primary">บันทึกการสั่งซื้อ</button>
+                          <button class="button is-light">ย้อนกลับ</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-while" style="color: rgba(0, 0, 0, 0.7);">
+            <div class="content">
+              <p class="title">รายชื่อยา</p>
+              <!-- <p class="subtitle">With even more content</p> -->
+              <div class="content">
+                <!-- Content -->
+                <div class="field is-horizontal">
+                  <div class="field-label is-normal">
+                    <label class="label">ค้นหา</label>
+                  </div>
+                  <div class="field-body">
+                    <div class="field has-addons">
+                      <p class="control is-expanded">
+                        <input class="input" type="text" placeholder="Your email">
+                      </p>
+                      <p class="control">
+                        <button class="button is-primary">
+                          ค้นหา
+                        </button>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <table class="table table is-striped table is-hoverable">
+                  <thead>
+                    <tr>
+                      <th><abbr title="Position">รหัส</abbr></th>
+                      <th>ชื่อยา</th>
+                      <th><abbr title="Played">คงเหลือ</abbr></th>
+                      <th>ราคา/ชิ้น</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th><abbr title="Position">รหัส</abbr></th>
+                      <th>ชื่อยา</th>
+                      <th><abbr title="Played">คงเหลือ</abbr></th>
+                      <th>ราคา/ชิ้น</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <tr>
+                      <th>1</th>
+                      <td>
+                        <a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
+                      </td>
+                      <td>38</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th>1</th>
+                      <td>
+                        <a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
+                      </td>
+                      <td>38</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>

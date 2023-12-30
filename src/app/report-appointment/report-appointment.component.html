@@ -1,0 +1,90 @@
+<app-header></app-header>
+<div class="wrapper">
+  <div class="">
+    <app-sidebar></app-sidebar>
+
+
+    <main class="main">
+        <div class="tile is-vertical">
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-while" style="color: rgba(0, 0, 0, 0.7);">
+              <div class="content">
+                <p class="title">รายการนัดหมาย</p>
+                <!-- <p class="subtitle">With even more content</p> -->
+                <div class="content">
+                  <!-- Content -->
+                  <div class="field is-horizontal">
+                    <div class="field-body">
+                      <div class="field has-addons">
+                        <p class="control is-expanded">
+                          <!-- <input class="input" type="date" placeholder="Your email"> -->
+                          <!-- <ejs-daterangepicker class="input" strictMode='true' placeholder='Select a range'></ejs-daterangepicker> -->
+                          <!-- <ejs-daterangepicker class="input" placeholder="Select a date range" [startDate]="startDateValue" [endDate]="endDateValue" [min]="minDate" [minDays]="minDayValue" format="dd-MMM-yy" start="Year" depth="Year"></ejs-daterangepicker> -->
+                          <ejs-daterangepicker class="input" strictMode="true" placeholder="Select a date range" [startDate]="startDateValue" [endDate]="endDateValue"></ejs-daterangepicker>
+                          <!-- <mat-form-field appearance="outline" style="display: initial;position: relative;text-align: left;"> -->
+                            <!-- <mat-label>Choose Date Range</mat-label> -->
+                            <!-- <mat-date-range-input class="input" [rangePicker]="picker" [formGroup]="dateRange">
+                              <input matStartDate formControlName="start" placeholder="Start Date">
+                              <input matEndDate formControlName="end" placeholder="End Date">
+                            </mat-date-range-input>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-date-range-picker #picker></mat-date-range-picker>
+                          </mat-form-field> -->
+                        </p>
+                        <p class="control">
+                          <button class="button is-primary">
+                            ค้นหา
+                          </button>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <table class="table table is-striped table is-hoverable">
+                    <thead>
+                      <tr>
+                        <th><abbr title="Position">รหัสการนัดหมาย</abbr></th>
+                        <th>ชื่อผู้ป่วย</th>
+                        <th><abbr title="Played">รายการรักษา</abbr></th>
+                        <th><abbr title="Won">เวลาที่รายการ</abbr></th>
+                        <th>ผู้ทำรายการ</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th><abbr title="Position">รหัสการนัดหมาย</abbr></th>
+                        <th>ชื่อผู้ป่วย</th>
+                        <th><abbr title="Played">รายการรักษา</abbr></th>
+                        <th><abbr title="Won">เวลาที่รายการ</abbr></th>
+                        <th>ผู้ทำรายการ</th>
+                      </tr>
+                    </tfoot>
+                    <tbody>
+                      <tr>
+                        <th>1</th>
+                        <td>
+                          <a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
+                        </td>
+                        <td>38</td>
+                        <td>38</td>
+                        <td>38</td>
+                      </tr>
+                      <tr>
+                        <th>1</th>
+                        <td>
+                          <a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
+                        </td>
+                        <td>38</td>
+                        <td>38</td>
+                        <td>38</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+    </main>
+  </div>
+</div>

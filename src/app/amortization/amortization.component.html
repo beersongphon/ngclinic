@@ -1,0 +1,67 @@
+<app-header></app-header>
+<div class="wrapper">
+  <div class="">
+    <app-sidebar></app-sidebar>
+
+
+    <main class="main">
+        <div class="tile is-vertical">
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-while" style="color: rgba(0, 0, 0, 0.7);">
+              <div class="content">
+                <p class="title">รายการตัดจำหน่าย</p>
+                <!-- <p class="subtitle">With even more content</p> -->
+                <div class="content">
+                  <!-- Content -->
+                  <div class="field is-horizontal">
+                    <div class="field-body">
+                      <div class="field has-addons">
+                        <p class="control is-expanded">
+                          <input class="input" type="search" placeholder="Your email">
+                        </p>
+                        <p class="control">
+                          <button class="button is-primary">
+                            ค้นหา
+                          </button>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <table class="table table is-striped table is-hoverable">
+                    <thead>
+                      <tr>
+                        <th><abbr title="Position">รหัสตัดจำหน่าย</abbr></th>
+                        <th><abbr title="Played">รหัสตัดจำหน่าย</abbr></th>
+                        <th>พนักงาน</th>
+                        <th>รายละเอียด</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th><abbr title="Position">รหัสตัดจำหน่าย</abbr></th>
+                        <th><abbr title="Played">รหัสตัดจำหน่าย</abbr></th>
+                        <th>พนักงาน</th>
+                        <th>รายละเอียด</th>
+                      </tr>
+                    </tfoot>
+                    <tbody>
+                      <tr *ngFor="let item of tableList; let i = index;" (click)="selectRow(i,item.dispensary_id)" (dblclick)="clickSelect()">
+                        <th>{{item.dispensary_id}}</th>
+                        <td>
+                          {{item.treatment_id}}
+                          <!-- <a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong> -->
+                        </td>
+                        <td>{{item.patient_card_id}}</td>
+                        <td>{{item.patient_name}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+    </main>
+  </div>
+</div>

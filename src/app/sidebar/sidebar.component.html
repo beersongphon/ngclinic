@@ -1,0 +1,153 @@
+<aside class="sidebar">
+  <nav class="menu">
+    <div class="menu-container" v-for="(items, x) in menus">
+      <p class="menu-label">General</p>
+      <ul class="menu-list">
+        <li><a routerLink="/patient-card" routerLinkActive="is-active">ทำบัตรผู้ป่วย</a></li>
+        <li><a routerLink="/patient" routerLinkActive="is-active">ข้อมูลผู้ป่วย</a></li>
+        <li><a routerLink="/preliminary" routerLinkActive="is-active">รายการรักษา</a></li>
+        <li><a routerLink="/appointment" routerLinkActive="is-active">รายการนัดหมาย</a></li>
+        <li><a routerLink="/payment" routerLinkActive="is-active">ชำระค่าบริการ</a></li>
+      </ul>
+      <ul class="menu-list">
+        <li>
+          <a>รายงาน</a>
+          <ul>
+            <li><a routerLink="/report-remedy" routerLinkActive="is-active">รายงานการรักษา</a></li>
+            <li><a routerLink="/report-appointment" routerLinkActive="is-active">รายงานการนัดหมาย</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- <ul class="menu-list">
+        <li><a>Dashboard</a></li>
+        <li><a>Customers</a></li>
+      </ul>
+      <p class="menu-label">
+        Administration
+      </p>
+      <ul class="menu-list">
+        <li><a>Team Settings</a></li>
+        <li>
+          <a class="is-active">Manage Your Team</a>
+          <ul>
+            <li><a>Members</a></li>
+            <li><a>Plugins</a></li>
+            <li><a>Add a member</a></li>
+          </ul>
+        </li>
+        <li><a>Invitations</a></li>
+        <li><a>Cloud Storage Environment Settings</a></li>
+        <li><a>Authentication</a></li>
+      </ul>
+    </div>
+    <div class="menu-category">
+      <header class="category-header">Elements</header>
+      <ul class="menu-list">
+        <li><a>Box</a></li>
+        <li><a>Button</a></li>
+        <li><a>Content</a></li>
+        <li><a>Delete</a></li>
+        <li><a>Icon</a></li>
+        <li><a>Image</a></li>
+        <li><a>Notification</a></li>
+        <li><a>Progress bars</a></li>
+        <li><a>Table</a></li>
+        <li><a>Tag</a></li>
+        <li><a>Title</a></li>
+      </ul>
+    </div>
+    <div class="menu-category">
+      <header class="category-header">Components</header>
+      <ul class="menu-list">
+        <li><a>Panels</a></li>
+        <li><a>Breadcrumb</a></li>
+        <li><a>Card</a></li>
+        <li><a>Dropdown</a></li>
+        <li><a>Menu</a></li>
+        <li><a>Message</a></li>
+        <li><a>Modal</a></li>
+        <li><a>Navbar</a></li>
+        <li><a>Pagination</a></li>
+        <li><a>Panel</a></li>
+        <li><a>Tabs</a></li>
+      </ul>
+    </div>
+    <div class="menu-category">
+      <header class="category-header">Pages</header>
+      <ul class="menu-list">
+        <li><a>Login</a></li>
+        <li><a>Logout</a></li>
+        <li><a>Page not found</a></li>
+      </ul> -->
+    </div>
+  </nav>
+</aside>
+<!-- <aside class="sidebar">
+  <nav class="menu">
+    <div class="menu-category">
+      <ul class="menu-list">
+        <li><a routerLink="/patient-card">ทำบัตรผู้ป่วย</a></li>
+        <li><a routerLink="/patient">ข้อมูลผู้ป่วย</a></li>
+        <li><a routerLink="/remedy">รายการรักษา</a></li>
+        <li><a routerLink="/appointment">รายการนัดหมาย</a></li>
+        <li><a routerLink="/payment">ชำระค่าบริการ</a></li>
+        <li><a routerLink="">รายงาน</a></li>
+      </ul>
+    </div> -->
+    <!-- <div class="menu-category">
+      <ul class="menu-list">
+        <li><a routerLink="">ทำบัตรผู้ป่วย</a></li>
+        <li><a routerLink="">ข้อมูลผู้ป่วย</a></li>
+        <li><a routerLink="">รายการรักษา</a></li>
+        <li><a routerLink="">รายการนัดหมาย</a></li>
+        <li><a routerLink="">ชำระค่าบริการ</a></li>
+        <li><a routerLink="">รายงาน</a></li>
+      </ul>
+      <header class="category-header">Dashboard</header>
+      <ul class="menu-list">
+        <li><a>Static</a></li>
+        <li><a>Streaming</a></li>
+      </ul>
+    </div>
+    <div class="menu-category">
+      <header class="category-header">Elements</header>
+      <ul class="menu-list">
+        <li><a>Box</a></li>
+        <li><a>Button</a></li>
+        <li><a>Content</a></li>
+        <li><a>Delete</a></li>
+        <li><a>Icon</a></li>
+        <li><a>Image</a></li>
+        <li><a>Notification</a></li>
+        <li><a>Progress bars</a></li>
+        <li><a>Table</a></li>
+        <li><a>Tag</a></li>
+        <li><a>Title</a></li>
+      </ul>
+    </div>
+    <div class="menu-category">
+      <header class="category-header">Components</header>
+      <ul class="menu-list">
+        <li><a>Panels</a></li>
+        <li><a>Breadcrumb</a></li>
+        <li><a>Card</a></li>
+        <li><a>Dropdown</a></li>
+        <li><a>Menu</a></li>
+        <li><a>Message</a></li>
+        <li><a>Modal</a></li>
+        <li><a>Navbar</a></li>
+        <li><a>Pagination</a></li>
+        <li><a>Panel</a></li>
+        <li><a>Tabs</a></li>
+      </ul>
+    </div>
+    <div class="menu-category">
+      <header class="category-header">Pages</header>
+      <ul class="menu-list">
+        <li><a>Login</a></li>
+        <li><a>Logout</a></li>
+        <li><a>Page not found</a></li>
+      </ul>
+    </div> -->
+  <!-- </nav>
+</aside> -->
