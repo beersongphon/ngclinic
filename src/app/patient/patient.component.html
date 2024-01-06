@@ -12,20 +12,7 @@
               <!-- <p class="subtitle">With even more content</p> -->
               <div class="content">
                 <!-- Content -->
-                <div class="field is-horizontal">
-                  <div class="field-body">
-                    <div class="field has-addons">
-                      <p class="control is-expanded">
-                        <input class="input" type="text" placeholder="Your email">
-                      </p>
-                      <p class="control">
-                        <button class="button is-primary">
-                          ค้นหา
-                        </button>
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <app-search></app-search>
                 <table class="table table is-striped table is-hoverable">
                   <thead>
                     <tr>
@@ -46,37 +33,22 @@
                     </tr>
                   </tfoot>
                   <tbody>
-                    <tr>
-                      <th>1</th>
-                      <td>
-                        <a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                      </td>
-                      <td>38</td>
-                      <td>38</td>
+                    <tr *ngFor="let item of patientService.tableList; let i = index;">
+                      <th>{{item.Card_ID}}</th>
+                      <td>{{item.Patient_Name}}</td>
+                      <td>{{item.Address}}</td>
+                      <td>{{item.Tel}}</td>
                       <td>
                         <div class="buttons">
-                          <a class="button is-success" routerLink="/initial-symptoms">ใช้บริการ</a>
-                          <a class="button is-info"><i class="fa fa-print" aria-hidden="true"></i> พิมพ์บัตร</a>
-                          <a class="button is-warning"><i class="fas fa-edit"></i> แก้ไข</a>
-                          <a class="button is-danger"><i class="fas fa-trash-alt"></i> ลบ</a>
+                          <a class="button is-success" [routerLink]="['/preliminary', item.Card_ID]">ใช้บริการ</a>
+                          <a class="button is-info" (click)="clickPrint(i)"><i class="fa fa-print" aria-hidden="true"></i> พิมพ์บัตร</a>
+                          <a class="button is-warning"(click)="actionAddUpdateDelete('Update', item)"><i class="fas fa-edit"></i> แก้ไข</a>
+                          <a class="button is-danger" (click)="actionAddUpdateDelete('Delete', item)"><i class="fas fa-trash-alt"></i> ลบ</a>
                         </div>
                       </td>
                     </tr>
-                    <tr>
-                      <th>1</th>
-                      <td>
-                        <a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                      </td>
-                      <td>38</td>
-                      <td>38</td>
-                      <td>
-                        <div class="buttons">
-                          <a class="button is-success" routerLink="/initial-symptoms">ใช้บริการ</a>
-                          <a class="button is-info"><i class="fa fa-print" aria-hidden="true"></i> พิมพ์บัตร</a>
-                          <a class="button is-warning"><i class="fas fa-edit"></i> แก้ไข</a>
-                          <a class="button is-danger"><i class="fas fa-trash-alt"></i> ลบ</a>
-                        </div>
-                      </td>
+                    <tr *ngIf="!patientService.tableList.length">
+                      <td colspan="5">No data to display.</td>
                     </tr>
                   </tbody>
                 </table>
@@ -85,6 +57,7 @@
           </article>
         </div>
       </div>
+      <app-print-patient-card [sentToPrint]="sentToPrint"></app-print-patient-card>
 
     </main>
   </div>

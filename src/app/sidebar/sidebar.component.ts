@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-
-  constructor() { }
+link:any
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
   }
-
+  clickLink(line:any){
+    this.link = line
+console.log(this.link);
+this.router.navigate([this.link]);
+  }
 }

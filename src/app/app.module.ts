@@ -72,6 +72,8 @@ import { ReportRemedyDetailComponent } from './report-remedy-detail/report-remed
 import { InvoiceComponent } from './invoice/invoice.component';
 import { TreatmentComponent } from './treatment/treatment.component';
 import { DiseaseComponent } from './disease/disease.component';
+import { PrintPatientCardComponent } from './patient/print-patient-card/print-patient-card.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -105,7 +107,9 @@ import { DiseaseComponent } from './disease/disease.component';
     InvoiceComponent,
     ProductWriteOffComponent,
     TreatmentComponent,
-    DiseaseComponent
+    DiseaseComponent,
+    PrintPatientCardComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

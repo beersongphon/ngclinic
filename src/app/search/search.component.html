@@ -1,0 +1,17 @@
+<div class="field is-horizontal">
+  <!-- <div class="field-label is-normal">
+    <label class="label">ค้นหา</label>
+  </div> -->
+  <div class="field-body">
+    <div [formGroup]="apiService.searchForm" class="field has-addons">
+      <p class="control is-expanded">
+        <input class="input" type="search" formControlName="txtSearch" placeholder="Search">
+      </p>
+      <p class="control">
+        <button class="button is-primary" (click)="clickSearch()">
+          ค้นหา
+        </button>
+      </p>
+    </div>
+  </div>
+</div>

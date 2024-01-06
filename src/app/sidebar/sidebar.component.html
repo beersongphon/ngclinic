@@ -5,13 +5,13 @@
       <ul class="menu-list">
         <li><a routerLink="/patient-card" routerLinkActive="is-active">ทำบัตรผู้ป่วย</a></li>
         <li><a routerLink="/patient" routerLinkActive="is-active">ข้อมูลผู้ป่วย</a></li>
-        <li><a routerLink="/preliminary" routerLinkActive="is-active">รายการรักษา</a></li>
+        <li><a routerLink="/remedy" routerLinkActive="is-active">รายการรักษา</a></li>
         <li><a routerLink="/appointment" routerLinkActive="is-active">รายการนัดหมาย</a></li>
         <li><a routerLink="/payment" routerLinkActive="is-active">ชำระค่าบริการ</a></li>
       </ul>
       <ul class="menu-list">
         <li>
-          <a>รายงาน</a>
+          <a [class.is-active]="router.isActive('/report-remedy', true) || router.isActive('/report-appointment', true)">รายงาน</a>
           <ul>
             <li><a routerLink="/report-remedy" routerLinkActive="is-active">รายงานการรักษา</a></li>
             <li><a routerLink="/report-appointment" routerLinkActive="is-active">รายงานการนัดหมาย</a></li>

@@ -8,7 +8,7 @@
         <div class="tile is-parent">
           <article class="tile is-child notification is-while" style="color: rgba(0, 0, 0, 0.7);">
             <div class="content">
-              <p class="title">รายชื่อผู้ป่วย</p>
+              <p class="title">รายการอาการผู้ป่วยเบื้องต้น</p>
               <!-- <p class="subtitle">With even more content</p> -->
               <div class="content">
                 <!-- Content -->
@@ -29,52 +29,34 @@
                 <table class="table table is-striped table is-hoverable">
                   <thead>
                     <tr>
-                      <th><abbr title="Position">รหัสบัตร</abbr></th>
+                      <th><abbr title="Preliminary_ID">รหัสอาการเบื้องต้น</abbr></th>
                       <th>ชื่อผู้ป่วย</th>
-                      <th><abbr title="Played">ที่อยู่</abbr></th>
-                      <th><abbr title="Won">เบอร์โทร</abbr></th>
+                      <th><abbr title="Preliminary_Condition">อาการเบื้องต้น</abbr></th>
+                      <th><abbr title="Emp_Name">ผู้ทำรายการ</abbr></th>
+                      <th>เวลาทำรายการ</th>
                       <th>จัดการ</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th><abbr title="Position">รหัสบัตร</abbr></th>
+                      <th><abbr title="Preliminary_ID">รหัสอาการเบื้องต้น</abbr></th>
                       <th>ชื่อผู้ป่วย</th>
-                      <th><abbr title="Played">ที่อยู่</abbr></th>
-                      <th><abbr title="Won">เบอร์โทร</abbr></th>
+                      <th><abbr title="Preliminary_Condition">อาการเบื้องต้น</abbr></th>
+                      <th><abbr title="Emp_Name">ผู้ทำรายการ</abbr></th>
+                      <th>เวลาทำรายการ</th>
                       <th>จัดการ</th>
                     </tr>
                   </tfoot>
                   <tbody>
-                    <tr>
-                      <th>1</th>
-                      <td>
-                        <a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                      </td>
-                      <td>38</td>
-                      <td>38</td>
-                      <td>
-                        <div class="buttons">
-                          <a class="button is-success" routerLink="/initial-symptoms">ใช้บริการ</a>
-                          <a class="button is-info"><i class="fa fa-print" aria-hidden="true"></i> พิมพ์บัตร</a>
-                          <a class="button is-warning"><i class="fas fa-edit"></i> แก้ไข</a>
-                          <a class="button is-danger"><i class="fas fa-trash-alt"></i> ลบ</a>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>1</th>
-                      <td>
-                        <a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                      </td>
-                      <td>38</td>
-                      <td>38</td>
+                    <tr *ngFor="let item of tableList">
+                      <th>{{item.Preliminary_ID}}</th>
+                      <td>{{item.Patient_Name}} </td>
+                      <td>{{item.Preliminary_Condition}}</td>
+                      <td>{{item.Emp_Name}}</td>
+                      <td>{{item.Preliminary_Date}}</td>
                       <td>
                         <div class="buttons">
-                          <a class="button is-success" routerLink="/initial-symptoms">ใช้บริการ</a>
-                          <a class="button is-info"><i class="fa fa-print" aria-hidden="true"></i> พิมพ์บัตร</a>
-                          <a class="button is-warning"><i class="fas fa-edit"></i> แก้ไข</a>
-                          <a class="button is-danger"><i class="fas fa-trash-alt"></i> ลบ</a>
+                          <a class="button is-info" [routerLink]="['/symptoms', item.Preliminary_ID]"><i class="fa fa-plus" aria-hidden="true"></i> รักษา</a>
                         </div>
                       </td>
                     </tr>

@@ -30,18 +30,20 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AuthGuard } from './shared/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'patient-card', component: PatientCardComponent, canActivate: [AuthGuard] },
   { path: 'patient', component: PatientComponent, canActivate: [AuthGuard] },
   { path: 'edit-patient', component: EditPatientComponent, canActivate: [AuthGuard] },
   { path: 'preliminary', component: PreliminaryComponent, canActivate: [AuthGuard] },
+  { path: 'preliminary/:id', component: PreliminaryComponent, canActivate: [AuthGuard] },
   { path: 'remedy', component: RemedyComponent, canActivate: [AuthGuard] },
   { path: 'appointment', component: AppointmentComponent, canActivate: [AuthGuard] },
   { path: 'payment', component: PaymentComponent, canActivate: [AuthGuard] },
   { path: 'checkout/:id', component: CheckoutComponent, canActivate: [AuthGuard] },
   { path: 'symptoms', component: SymptomsComponent, canActivate: [AuthGuard] },
+  { path: 'symptoms/:id', component: SymptomsComponent, canActivate: [AuthGuard] },
   { path: 'add-appointment', component: AddAppointmentComponent, canActivate: [AuthGuard] },
   { path: 'order', component: OrderComponent, canActivate: [AuthGuard] },
   { path: 'orders', component: OrdersComponent, canActivate: [AuthGuard] },

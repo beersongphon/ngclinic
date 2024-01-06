@@ -21,7 +21,7 @@
                   <div class="field-body">
                     <div class="field">
                       <div class="control">
-                        <input class="input" type="text" placeholder="PatientID" formControlName="patientid">
+                        <input class="input" type="text" placeholder="CardID" formControlName="cardid">
                       </div>
                     </div>
                   </div>
@@ -139,7 +139,7 @@
                   </div>
                 </div>
 
-                <div class="field is-horizontal">
+                <!-- <div class="field is-horizontal">
                   <div class="field-label is-normal">
                     <label class="label">เพศ</label>
                   </div>
@@ -159,18 +159,22 @@
                     <div class="field-label is-normal">
                       <label class="label">กรุ๊ป</label>
                     </div>
-                    <div class="field">
-                      <div class="control is-expanded has-icons-left has-icons-right">
+                    <div class="field"> -->
+                      <!-- <div class="control is-expanded has-icons-left has-icons-right"> -->
+                      <!-- <div class="control">
                         <div class="select">
                           <select>
-                            <option>Select dropdown</option>
-                            <option>With options</option>
+                            <option value="">กรุณาเลือกกรุ๊ป</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="O">O</option>
+                            <option value="AB">AB</option>
                           </select>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
 
                 <div class="field is-horizontal">
                   <div class="field-label is-normal">
@@ -264,7 +268,7 @@
                   </div>
                 </div>
 
-                <div class="field is-horizontal">
+                <!-- <div class="field is-horizontal">
                   <div class="field-label is-normal">
                     <label class="label">โรคประจำตัว</label>
                   </div>
@@ -275,7 +279,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
 
                 <div class="field is-horizontal">
                   <div class="field-label">
@@ -302,23 +306,7 @@
               <!-- <p class="subtitle">With even more content</p> -->
               <div class="content">
                 <!-- Content -->
-                <div class="field is-horizontal">
-                  <!-- <div class="field-label is-normal">
-                    <label class="label">ค้นหา</label>
-                  </div> -->
-                  <div class="field-body">
-                    <div class="field has-addons">
-                      <p class="control is-expanded">
-                        <input class="input" type="text" placeholder="Your email">
-                      </p>
-                      <p class="control">
-                        <button class="button is-primary">
-                          ค้นหา
-                        </button>
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <app-search></app-search>
                 <table class="table table is-striped table is-hoverable">
                   <thead>
                     <tr>
@@ -337,11 +325,14 @@
                     </tr>
                   </tfoot>
                   <tbody>
-                    <tr *ngFor="let item of tableList; let i = index;">
+                    <tr *ngFor="let item of patientService.tableList; let i = index;">
                       <th>{{item.Card_ID}}</th>
                       <td>{{item.Patient_Name}}</td>
                       <td>{{item.Patient_Name}}</td>
-                      <td>{{item.Patient_Name}}</td>
+                      <td></td>
+                    </tr>
+                    <tr *ngIf="!patientService.tableList.length">
+                      <td colspan="4">No data to display.</td>
                     </tr>
                   </tbody>
                 </table>

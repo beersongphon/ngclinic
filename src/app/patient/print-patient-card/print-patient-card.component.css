@@ -1,0 +1,48 @@
+body {
+  font-family: 'Garuda'
+}
+
+.order-container {
+  font-family: Tahoma, Geneva, sans-serif;
+  margin: 0px auto;
+  width: 950px;
+  font-size: 14px;
+}
+
+.order-head {
+  margin: 50px 0 10px 0;
+}
+
+.order-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.order-subtitle {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.order-head .order-customer {
+  text-align: center;
+  font-size: 24px;
+  padding: 5px;
+}
+
+.order-head .order-date {
+  text-align: right;
+  margin: 10px 0 10px 0;
+  float: right;
+  padding: 5px;
+  border: 1px solid #000;
+}
+
+.order-underline {
+  border-bottom: #000 1px dashed;
+}
+
+.clear {
+  clear: both;
+}

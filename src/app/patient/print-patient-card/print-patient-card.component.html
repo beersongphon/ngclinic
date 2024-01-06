@@ -1,0 +1,29 @@
+<div id="pagePrint" *ngIf="disablePage">
+  <div class='order-container'>
+    <div class='order-title'>ใบเสร็จ</div>
+    <!-- <div class='order-subtitle'>บัตรประจำตัวผู้ป่วย</div> -->
+    <div class='order-head'>
+      <!-- <div class='order-date'>
+        <b>เลขที่ใบเสร็จ</b>
+        <span class='order-underline'> {{printLabelList.order_id}}</span><br />
+        <b>วันที่สั่งซื้อ</b>
+        <span class='order-underline'> {{printLabelList.order_date | date: 'dd/MM/yyyy'}}</span>
+      </div>
+      <div class='order-date'>
+        <b>เลขที่ใบเสร็จ</b>
+        <span class='order-underline'> {{printLabelList.order_id}}</span><br />
+        <b>วันที่สั่งซื้อ</b>
+        <span class='order-underline'> {{printLabelList.order_date | date: 'dd/MM/yyyy'}}</span>
+      </div> -->
+      <div class='order-customer'>
+        <span class='order-underline'>บัตรประจำตัวผู้ป่วย</span><br />
+        <!-- <b>ชื่อ-สกุล</b> -->
+        <span class='order-underline'>รหัสผู้ป่วย {{printLabelList.Patient_ID}}</span><br />
+        <!-- <b>ที่อยู่</b> -->
+        <span class='order-underline'>ชื่อผู้ป่วย {{printLabelList.Patient_Name}}</span><br />
+      </div>
+    </div>
+    <div class='clear'></div>
+  </div>
+</div>
+

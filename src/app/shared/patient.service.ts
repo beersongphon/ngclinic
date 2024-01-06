@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
 import { environment } from './../../environments/environment';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PatientService {
+
+  tableList: any[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -34,34 +39,32 @@ export class PatientService {
   // }
 
   //สร้าง function สำหรับเรียกดูข้อมูลอาจารย์
-  getPatients(): Observable<any[]>{
-    return this.http.get<any>(environment.apiUrl + '/patient.php');
-  }
-
-  //สร้าง function สำหรับเรียกดูข้อมูลอาจารย์ทั้งหมด
-  getPatient(formValue: any): Observable<any[]>{
+  getPatient(formValue: any): void {
     const apiHeader = { 'Content-Type': 'application/json' };
-    return this.http.post<any>(environment.apiUrl + '/patient.php', formValue, { headers: apiHeader });
-  }
+    this.http.post<any>(environment.apiUrl + '/api_patient.php', formValue, { headers: apiHeader }).subscribe({
+      next: (res) => {
+        this.tableList = res;
 
-  //สร้าง function สำหรับเพิ่มข้อมูลอาจารย์
-  insertPatient(formValue: any){
-    const apiHeader = { 'Content-Type': 'application/json' };
-    // return this.http.post<any>(environment.apiUrl + '/patient.php', formValue, { headers: apiHeader });
-    return this.http.post<any>(environment.apiUrl + '/patient.php', formValue).subscribe((res: Response) => {
-      this.getPatients();
+      }, error: (error) => {
+        Swal.fire({
+          icon: "error",
+          title: (error),
+          showConfirmButton: false,
+          timer: 2000
+        }).then((result) => {
+          if (result.isDismissed) {
+            window.history.back;
+          }
+        });
+      }
     });
   }
-
-  //สร้าง function สำหรับแก้ไขข้อมูลอาจารย์
-  updateTeacher(formValue: any): Observable<any>{
+  //สร้าง function สำหรับเพิ่มข้อมูลอาจารย์
+  actionPatient(formValue: any) {
     const apiHeader = { 'Content-Type': 'application/json' };
-    return this.http.post<any>(environment.apiUrl + '/api_edit_teacher.php', formValue, { headers: apiHeader });
-  }
-
-  //สร้าง function สำหรับลบข้อมูลอาจารย์
-  deleteTeacher(formValue: any): Observable<any>{
-    const apiHeader = { 'Content-Type': 'application/json' };
-    return this.http.post<any>(environment.apiUrl + '/api_delete_teacher.php', formValue, { headers: apiHeader });
+    return this.http.post<any>(environment.apiUrl + '/api_patient.php', formValue, { headers: apiHeader });
+    // return this.http.post<any>(environment.apiUrl + '/api_patient.php', formValue).subscribe((res: Response) => {
+    //   this.getPatients();
+    // });
   }
 }
