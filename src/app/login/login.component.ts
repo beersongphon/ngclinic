@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
             timer: 1500
           }).then((result) => {
             if (result.isDismissed) {
-              if (token.data.Department == "Employee") {
+              if (token.data.Doctor_Department == "แพทย์" || token.data.Emp_Department == "พนักงาน") {
                 const redirect = this.apiService.redirectUrl ? this.apiService.redirectUrl : '/home';
                 this.router.navigate([redirect]).then(() => {
                   window.location.reload();

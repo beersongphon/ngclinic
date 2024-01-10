@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { environment } from './../../environments/environment';
+import Swal from 'sweetalert2';
 
 export interface Users {
   User_ID: number;
@@ -24,6 +25,7 @@ export class ApiService {
   searchForm: FormGroup = this.fb.group({
     txtSearch: ['']
   });
+  tableList: any[] = [];
   //registerUrl: string = "http://localhost/api/register.php";
 
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
@@ -73,6 +75,133 @@ export class ApiService {
   actionPreliminary(formValue: any){
     const apiHeader = { 'Content-Type': 'application/json' };
     return this.http.post<any>(environment.apiUrl + '/api_preliminary.php', formValue, { headers: apiHeader });
+  }
+
+  actionDealer(formValue: any){
+    const apiHeader = { 'Content-Type': 'application/json' };
+    return this.http.post<any>(environment.apiUrl + '/api_dealer.php', formValue, { headers: apiHeader });
+  }
+
+  updateDealer(formValue: any){
+    const apiHeader = { 'Content-Type': 'application/json' };
+    return this.http.put<any>(environment.apiUrl + '/api_dealer.php', formValue, { headers: apiHeader });
+  }
+
+  deleteDealer(formValue: any): Observable<any>{
+    const apiHeader = { 'Content-Type': 'application/json' };
+    // const p = {
+    //   'id': id.toString()
+    // };
+    return this.http.delete<any>(environment.apiUrl + '/api_dealer.php', { params: formValue });
+  }
+
+  getDealer(formValue: any): void {
+    const apiHeader = { 'Content-Type': 'application/json' };
+    this.http.post<any>(environment.apiUrl + '/api_dealer.php', formValue, { headers: apiHeader }).subscribe({
+      next: (res) => {
+        this.tableList = res;
+      }, error: (error) => {
+        Swal.fire({
+          icon: "error",
+          title: (error),
+          showConfirmButton: false,
+          timer: 2000
+        }).then((result) => {
+          if (result.isDismissed) {
+            window.history.back;
+          }
+        });
+      }
+    });
+  }
+
+  actionDisease(formValue: any){
+    const apiHeader = { 'Content-Type': 'application/json' };
+    return this.http.post<any>(environment.apiUrl + '/api_disease.php', formValue, { headers: apiHeader });
+  }
+
+  updateDisease(formValue: any){
+    const apiHeader = { 'Content-Type': 'application/json' };
+    return this.http.put<any>(environment.apiUrl + '/api_disease.php', formValue, { headers: apiHeader });
+  }
+
+  getDisease(formValue: any): void {
+    const apiHeader = { 'Content-Type': 'application/json' };
+    this.http.post<any>(environment.apiUrl + '/api_disease.php', formValue, { headers: apiHeader }).subscribe({
+      next: (res) => {
+        this.tableList = res;
+      }, error: (error) => {
+        Swal.fire({
+          icon: "error",
+          title: (error),
+          showConfirmButton: false,
+          timer: 2000
+        }).then((result) => {
+          if (result.isDismissed) {
+            window.history.back;
+          }
+        });
+      }
+    });
+  }
+
+  actionDrug(formValue: any){
+    const apiHeader = { 'Content-Type': 'application/json' };
+    return this.http.post<any>(environment.apiUrl + '/api_drug.php', formValue, { headers: apiHeader });
+  }
+
+  updateDrug(formValue: any){
+    const apiHeader = { 'Content-Type': 'application/json' };
+    return this.http.put<any>(environment.apiUrl + '/api_drug.php', formValue, { headers: apiHeader });
+  }
+
+  getDrug(formValue: any): void {
+    const apiHeader = { 'Content-Type': 'application/json' };
+    this.http.post<any>(environment.apiUrl + '/api_drug.php', formValue, { headers: apiHeader }).subscribe({
+      next: (res) => {
+        this.tableList = res;
+        this.tableList = this.tableList.map((item) => ({
+          ...item,
+          Date: item.Mfg_Date +' / '+ item.Exp_Date,
+        }));
+      }, error: (error) => {
+        Swal.fire({
+          icon: "error",
+          title: (error),
+          showConfirmButton: false,
+          timer: 2000
+        }).then((result) => {
+          if (result.isDismissed) {
+            window.history.back;
+          }
+        });
+      }
+    });
+  }
+
+  actionUser(formValue: any){
+    const apiHeader = { 'Content-Type': 'application/json' };
+    return this.http.post<any>(environment.apiUrl + '/api_user.php', formValue, { headers: apiHeader });
+  }
+
+  getUsers(formValue: any): void {
+    const apiHeader = { 'Content-Type': 'application/json' };
+    this.http.post<any>(environment.apiUrl + '/api_user.php', formValue, { headers: apiHeader }).subscribe({
+      next: (res) => {
+        this.tableList = res;
+      }, error: (error) => {
+        Swal.fire({
+          icon: "error",
+          title: (error),
+          showConfirmButton: false,
+          timer: 2000
+        }).then((result) => {
+          if (result.isDismissed) {
+            window.history.back;
+          }
+        });
+      }
+    });
   }
 
   getUser(): Observable<any> {

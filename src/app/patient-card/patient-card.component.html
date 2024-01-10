@@ -51,7 +51,7 @@
                         </span>
                         <span
                           *ngIf="cardPatientForm.controls['firstname'].invalid && (cardPatientForm.controls['firstname'].touched || cardPatientForm.controls['firstname'].dirty)"
-                          class="icon is-small is-right" class="help is-danger">
+                          class="help is-danger">
                           กรุณากรอกชื่อ
                         </span>
                       </div>
@@ -87,7 +87,7 @@
                         </span>
                         <span
                           *ngIf="cardPatientForm.controls['lastname'].invalid && (cardPatientForm.controls['lastname'].touched || cardPatientForm.controls['lastname'].dirty)"
-                          class="icon is-small is-right" class="help is-danger">
+                          class="help is-danger">
                           กรุณากรอกนามสกุล
                         </span>
                       </p>
@@ -131,7 +131,7 @@
                         </span>
                         <span
                           *ngIf="cardPatientForm.controls['birthday'].invalid && (cardPatientForm.controls['birthday'].touched || cardPatientForm.controls['birthday'].dirty)"
-                          class="icon is-small is-right" class="help is-danger">
+                          class="help is-danger">
                           กรุณาเลือกวันเดือนปีเกิด
                         </span>
                       </div>
@@ -160,8 +160,8 @@
                       <label class="label">กรุ๊ป</label>
                     </div>
                     <div class="field"> -->
-                      <!-- <div class="control is-expanded has-icons-left has-icons-right"> -->
-                      <!-- <div class="control">
+                <!-- <div class="control is-expanded has-icons-left has-icons-right"> -->
+                <!-- <div class="control">
                         <div class="select">
                           <select>
                             <option value="">กรุณาเลือกกรุ๊ป</option>
@@ -184,12 +184,13 @@
                     <div class="field">
                       <div class="control is-expanded has-icons-left">
                         <!-- <textarea class="textarea" placeholder="Address" formControlName="address"></textarea> -->
-                        <textarea class="textarea" [ngClass]="{'is-success': cardPatientForm.controls['address'].valid && (cardPatientForm.controls['address'].touched || cardPatientForm.controls['address'].dirty),
+                        <textarea class="textarea"
+                          [ngClass]="{'is-success': cardPatientForm.controls['address'].valid && (cardPatientForm.controls['address'].touched || cardPatientForm.controls['address'].dirty),
                         'is-danger': cardPatientForm.controls['address'].invalid && (cardPatientForm.controls['address'].touched || cardPatientForm.controls['address'].dirty)}"
-                        placeholder="Address" formControlName="address"></textarea>
+                          placeholder="Address" formControlName="address"></textarea>
                         <span
                           *ngIf="cardPatientForm.controls['address'].invalid && (cardPatientForm.controls['address'].touched || cardPatientForm.controls['address'].dirty)"
-                          class="icon is-small is-right" class="help is-danger">
+                          class="help is-danger">
                           กรุณากรอกที่อยู่
                         </span>
                       </div>
@@ -200,12 +201,13 @@
                     <div class="field">
                       <div class="control is-expanded has-icons-left has-icons-right">
                         <!-- <textarea class="textarea" placeholder="Allergic" formControlName="allergic"></textarea> -->
-                        <textarea class="textarea" [ngClass]="{'is-success': cardPatientForm.controls['allergic'].valid && (cardPatientForm.controls['allergic'].touched || cardPatientForm.controls['allergic'].dirty),
+                        <textarea class="textarea"
+                          [ngClass]="{'is-success': cardPatientForm.controls['allergic'].valid && (cardPatientForm.controls['allergic'].touched || cardPatientForm.controls['allergic'].dirty),
                         'is-danger': cardPatientForm.controls['allergic'].invalid && (cardPatientForm.controls['allergic'].touched || cardPatientForm.controls['allergic'].dirty)}"
-                        placeholder="Allergic" formControlName="allergic"></textarea>
+                          placeholder="Allergic" formControlName="allergic"></textarea>
                         <span
                           *ngIf="cardPatientForm.controls['allergic'].invalid && (cardPatientForm.controls['allergic'].touched || cardPatientForm.controls['allergic'].dirty)"
-                          class="icon is-small is-right" class="help is-danger">
+                          class="help is-danger">
                           กรุณากรอกแพ้ยา
                         </span>
                       </div>
@@ -260,7 +262,7 @@
                         </span>
                         <span
                           *ngIf="cardPatientForm.controls['tel'].invalid && (cardPatientForm.controls['tel'].touched || cardPatientForm.controls['tel'].dirty)"
-                          class="icon is-small is-right" class="help is-danger">
+                          class="help is-danger">
                           กรุณากรอกเบอร์โทรศัพท์
                         </span>
                       </div>
