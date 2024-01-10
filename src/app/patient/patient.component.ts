@@ -30,7 +30,7 @@ export class PatientComponent implements OnInit {
 
   clickPrint(nums: any) {
     let listToPrints: any;
-    listToPrints = JSON.parse(JSON.stringify(this.tableList[nums]));
+    listToPrints = JSON.parse(JSON.stringify(this.patientService.tableList[nums]));
     if (listToPrints.length == 0) {
       Swal.fire({
         icon: 'error',
