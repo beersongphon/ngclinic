@@ -26,6 +26,8 @@ import { ReportRemedyComponent } from './report-remedy/report-remedy.component';
 import { ReportAppointmentComponent } from './report-appointment/report-appointment.component';
 import { ReportPatientCardComponent } from './report-patient-card/report-patient-card.component';
 import { ReportRemedyDetailComponent } from './report-remedy-detail/report-remedy-detail.component';
+import { DispensingMedicineComponent } from './dispensing-medicine/dispensing-medicine.component';
+import { GetMedicineComponent } from './get-medicine/get-medicine.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AuthGuard } from './shared/auth.guard';
 
@@ -39,12 +41,14 @@ const routes: Routes = [
   { path: 'preliminary', component: PreliminaryComponent, canActivate: [AuthGuard] },
   { path: 'preliminary/:id', component: PreliminaryComponent, canActivate: [AuthGuard] },
   { path: 'remedy', component: RemedyComponent, canActivate: [AuthGuard] },
+  { path: 'dispensing-medicine/:id', component: DispensingMedicineComponent, canActivate: [AuthGuard] },
+  { path: 'get-medicine', component: GetMedicineComponent, canActivate: [AuthGuard] },
   { path: 'appointment', component: AppointmentComponent, canActivate: [AuthGuard] },
+  { path: 'appointment/:id', component: AddAppointmentComponent, canActivate: [AuthGuard] },
   { path: 'payment', component: PaymentComponent, canActivate: [AuthGuard] },
   { path: 'checkout/:id', component: CheckoutComponent, canActivate: [AuthGuard] },
   { path: 'symptoms', component: SymptomsComponent, canActivate: [AuthGuard] },
   { path: 'symptoms/:id', component: SymptomsComponent, canActivate: [AuthGuard] },
-  { path: 'add-appointment', component: AddAppointmentComponent, canActivate: [AuthGuard] },
   { path: 'order', component: OrderComponent, canActivate: [AuthGuard] },
   { path: 'orders', component: OrdersComponent, canActivate: [AuthGuard] },
   { path: 'user', component: UserComponent, canActivate: [AuthGuard] },

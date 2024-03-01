@@ -74,6 +74,8 @@ import { TreatmentComponent } from './treatment/treatment.component';
 import { DiseaseComponent } from './disease/disease.component';
 import { PrintPatientCardComponent } from './patient/print-patient-card/print-patient-card.component';
 import { SearchComponent } from './search/search.component';
+import { DispensingMedicineComponent } from './dispensing-medicine/dispensing-medicine.component';
+import { GetMedicineComponent } from './get-medicine/get-medicine.component';
 
 @NgModule({
   declarations: [
@@ -109,7 +111,9 @@ import { SearchComponent } from './search/search.component';
     TreatmentComponent,
     DiseaseComponent,
     PrintPatientCardComponent,
-    SearchComponent
+    SearchComponent,
+    DispensingMedicineComponent,
+    GetMedicineComponent
   ],
   imports: [
     BrowserModule,
